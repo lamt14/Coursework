@@ -1,0 +1,102 @@
+class unweightedGraph:
+    def __init__(self):
+        self.unweighted = {}
+        
+    def Addnode(self, key):
+        if key not in self.unweighted:
+            self.unweighted[key] = []
+        else:
+            print("node is present")
+
+    def Addedge(self, KeyA, KeyB):
+        if KeyA in self.unweighted and KeyB in self.unweighted:
+            if KeyA in self.unweighted[KeyA]:
+                self.unweighted[KeyA].append(KeyB)
+            if KeyA not in self.unweighted[KeyB]:
+                self.unweighted[KeyB].append(KeyA)
+        else:
+            print("there is one node not present")
+
+
+graph = unweightedGraph()
+graph.Addnode("A")
+graph.Addnode("B")
+graph.Addnode("C")
+graph.Addnode("D")
+graph.Addnode("E")
+graph.Addnode("F")
+graph.Addnode("G")
+graph.Addnode("H")
+graph.Addnode("I")
+graph.Addnode("J")
+graph.Addnode("K")
+
+
+
+
+graph.Addedge("A", "B")
+graph.Addedge("B", "C")
+graph.Addedge("C", "D")
+graph.Addedge("D", "J")
+graph.Addedge("J", "H")
+graph.Addedge("H", "G")
+graph.Addedge("F", "G")
+graph.Addedge("E", "F")
+graph.Addedge("E", "I")
+graph.Addedge("I", "A")
+graph.Addedge("A", "K")
+graph.Addedge("K", "D")
+graph.Addedge("H", "K")
+graph.Addedge("K", "E")
+
+
+print(graph.unweighted)
+
+'''
+CLASS unweightedGraph:
+    __INT__(self):
+      self.unweighted <- {}
+
+    ADDNODE(self, key):
+       IF key NOT IN self.unweighted:
+         self.unweighted[key] = []
+       ELSE:
+          print node is present
+    ADDEDGE(self, keyA, keyb):
+        IF KeyA IN self.unweighted AND KeyB IN self.unweighted:
+            IF KeyA IN self.unweighted[KeyA]:
+                Append KeyB into self.unweighted[KeyA]
+            IF KeyA not in self.unweighted[KeyB]:
+                Append KeyA into self.unweighted[KeyB]
+        ELSE:
+            print there is one node not present
+
+graph <- unweightedGraph()
+graph.Addnode(AString)
+graph.Addnode(AString)
+graph.Addnode(AString)
+
+graph.Addedge(AString, AnotherString)
+graph.Addedge(AString, AnotherString)
+graph.Addedge(AString, AnotherString)
+print graph.unweighted
+'''
+
+def DFS(G, v):
+    Stack = []
+    visited = []
+    Stack.append(v)
+    while Stack != []:
+        u = Stack.pop()
+        if u not in visited:
+            visited.append(u)
+            for i in graph.unweighted:
+                for p in graph.unweighted[i]:
+                    Stack.append(p)
+    return visited
+
+v = 1
+G = unweightedGraph()
+print()
+print(DFS(G, v))          
+           
