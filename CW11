@@ -1,0 +1,33 @@
+seq = [1, 2, 3, 4, 3, 1, 2, 3, 4, 5, 6, 7]
+
+output = []                          #create a empty list for saveing counter                               
+def maxlen(seq,output):
+    counter = 1                      #pointing the position of the list
+
+    for i in range (len(seq)-1):     #a loop for counting the subseq
+        if seq[i] >= seq[i + 1]:     #compare the one with next one
+            output.append(counter)   #if the previous num is bigger or equal than next num
+                                     #it append the counter to empty list
+            counter = 1              #reset the counter
+        else:
+            if seq[i < seq[i + 1]]:  #if previous num is smaller than the next num
+               counter += 1          #counter + 1 
+            else:
+                break
+               
+    output.append(counter)           #if counter bigger than lenght list, append the last counter to the list
+    return output
+
+def result(output, seq):
+    largest = max(output)            #find the largest value of counter list
+    out = output.index(largest)      #find the position of it
+    start = 0                        #create a start point
+    for u in range (out):
+        start = start + output[u]    #find the start point
+    return seq[start : start + largest] #find the whole longest lenght of subseq
+        
+    
+
+output = maxlen(seq,output)
+print(result(output,seq))
+
