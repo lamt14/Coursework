@@ -1,0 +1,11 @@
+List = [5, 3, 8, 6, 1, 9, 2, 7]
+from random import *
+
+x = []
+for i in range(0, len(List), 1):
+    randNum = randint(0, len(List)-1) # choose a number randomly from the List
+    takenout = List.pop(randNum)      # take out the random number 
+    x.append(takenout)                # put the number to a new List (x)
+print(x)
+
+
