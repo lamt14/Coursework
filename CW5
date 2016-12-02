@@ -1,0 +1,36 @@
+ADD (MatricesA, MatricesB):
+
+    Output <- []
+    FOR H <- 0 to n:
+        FOR V <- 0 to n:
+            Output[H, V] <- MatricesA[H, V] + Matrices[H, V]
+    RETURN Output
+
+
+SUB (MatricesA, MatricesB):
+
+    Output <- []
+    FOR H <- 0 to n:
+        FOR V <- 0 to n:
+            Output[H, V] <- MatricesA[H, V] - Matrices[H, V]
+    RETURN Output
+
+MUL (MatricesA, MatricesB):
+
+    FOR H <- 0 to n:
+        FOR V <- 0 to n:
+            Output1 <- Output[H, V] <- MatricesA[H, V] * Matrices[H, V]
+            Output2 <- MatricesA [H + 1, V], MatricesB [V + 1, H]
+            Output3 <- MatricesA [H + 2, V], MatricesB [V + 2, H]
+            Output <- Output1 + Output2 + Output3
+        RETURN Output
+            
+
+
+
+
+MatricesA <- [[q, w, e], [r, t, y]]
+MatricesB <- [[a, s, d], [f, g, h]]
+ADD(MatricesA, MatricesB)
+SUB(MatricesA, MatricesB)
+MUL(MatricesA, MatricesB)
