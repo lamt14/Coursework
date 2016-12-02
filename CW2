@@ -1,0 +1,20 @@
+from math import *
+def PS (N):
+     A =  sqrt(N)
+     print(A)
+     B =  int(A)
+     print (B)
+     C = B**2
+     print ((str('The nearest perfect square is ')) + (str(C)))
+
+PS(145)
+
+'''
+PS(N):
+   A <- sqrt(N)
+   print(A)
+   B <- int(A)
+   print(B)
+   C <- B^2
+   print(C)
+'''
