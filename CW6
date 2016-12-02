@@ -1,0 +1,28 @@
+def reverse(start, end, sentence):
+    if start == end or end < start:
+        return start
+    else:
+        temp = sentence[start]                 # save the start value
+        sentence [start] = sentence [end]
+        sentence [end] = temp
+        reverse (start+1, end-1, sentence)
+        print (sentence)
+
+sentence = "This is awesome !".split()
+reverse (0, len(sentence)-1, sentence)
+
+
+'''
+REVERSE(start, end, sentence):
+     IF start = end or end < start:              #1
+          RETURN start                           #1
+     ELSE:
+          temp <- sentence[start]                #1
+          sentence [start] <- sentence[end]      #1
+          sentence [end] <- temp                 #1
+          REVERSE (start+1, end-1, sentence)     #n
+          print(sentence)                       
+
+sentence <- "This is awesome !".split()
+REVERSE (0, (length of sentense) -1, sentence)  #BigO notation: O(n)
+'''
