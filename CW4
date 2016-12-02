@@ -1,0 +1,42 @@
+'''
+Q.1
+
+
+List [5, 3, 8, 6, 1, 9, 2, 7]
+
+x <- []                                                          #1
+FOR i 1 to length List:                                          #n
+    ranNum <- random number from List                            #n
+    takeout <- take the randNum from List                        #n
+    append takeout to x                                          #n
+print x                                                          #1
+'''
+
+
+
+'''
+Q.2
+
+
+n <- 0                               #1
+FACTORIAL (x):
+     IF x < 1:                       #1
+       RETURN 1                      #1
+     ELSE:                           #1
+       result <- x* FACTORIAL(x -1)  #n
+       return result                 #1
+
+TRAILING(result):
+     _result <- str(result)         #1
+     x <- 0                         #1
+     i <- 1                         #1
+     FOR index in _result:          #n
+        IF _result[-i] = "0":       #n
+           x <- x+1                 #n
+           i <- i+1                 #n
+        ELSE:
+           RETURN x
+           
+result = FACTORIAL(100)
+print TRAILING(result)            #BigO notaion: O(n)
+'''
