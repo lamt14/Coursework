@@ -1,0 +1,43 @@
+
+def removeVC(word, counter):
+    if len(word) == 0:
+        print("put another word")
+    else:
+        if counter < len(word):
+            if word[counter] == "a" or word[counter] == "e" or word[counter] == "i"or word[counter] == "o" or word[counter] == "u":
+                letter = word[counter]
+                word = word.replace(letter, "")
+                removeVC(word, counter)
+            else:
+                counter += 1
+                removeVC(word, counter)
+        else:
+            print(word)
+
+word = str(input("Please enter a string: "))
+counter = 0
+print(removeVC(word, counter))
+
+
+'''
+
+def REMOVEVC(word, counter):
+    IF length of word <- 0:
+        print("put another word")
+    ELSE:
+        IF counter < length of word:
+            IF word[counter] ="a" OR word[counter] = "e" OR word[counter] = "i"OR word[counter] = "o" OR word[counter] = "u":
+                letter <- word[counter]
+                word <- delete letter from word
+                removeVC(word, counter)
+            ELSE:
+                counter <- counter + 1
+                removeVC(word, counter)
+        else:
+            print(word)
+
+word <- str(input("Please enter a string: "))
+counter <- 0
+print(removeVC(word, counter))
+
+'''
