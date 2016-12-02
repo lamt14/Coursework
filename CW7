@@ -1,0 +1,32 @@
+a=2
+def prime(a, n):
+
+    if n <= 1:
+        print ("pick another number")
+    else:
+        if a >= n:
+            print(n, " is prime")
+        else:
+            if n%a == 0:
+                print( n ,'is not prime')
+            else:
+                return prime(a+1, n)
+
+
+print(prime(a, 13))
+
+
+'''
+PRIME(a, n):
+    IF n <= 1:
+       return 1
+    ELSE:
+       IF a >= n:
+         print n is prime
+       ELSE:
+         IF n%a == 0:
+            print n is not prime
+        ELSE:
+            RETURN prime(a+1, n)
+'''
+          
